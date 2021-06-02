@@ -32,7 +32,6 @@ class TestMC(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 
-n=int(input("enter a integer."))
 
 def wallis(n):
     value=1
