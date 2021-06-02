@@ -1,6 +1,7 @@
 import math
 import unittest
 import random
+
 class TestWallis(unittest.TestCase):
     def test_low_iters(self):
         for i in range(0, 5):
