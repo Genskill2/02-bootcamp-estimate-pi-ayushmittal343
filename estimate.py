@@ -1,6 +1,6 @@
 import math
 import unittest
-
+import random
 class TestWallis(unittest.TestCase):
     def test_low_iters(self):
         for i in range(0, 5):
@@ -30,3 +30,26 @@ class TestMC(unittest.TestCase):
     
 if __name__ == "__main__":
     unittest.main()
+
+n=int(input("enter a integer."))
+
+def wallis(n):
+    value=1
+    for i in range (1,n+1):             
+        product= 4*(i**2)/(4*(i**2)-1) 
+        value = value*product
+    return value
+print(f"the estimated value of pi/2 is {wallis(n)} ")
+
+
+def monte_carlo(n):
+    dart_in_square,dart_in_circle=0,0
+    for i in range(n):
+        x=random.random()
+        y=random.random()
+        d=math.sqrt(x**2 +y**2) #distance
+        if d<=1:
+            dart_in_circle +=1
+    pi=(4*dart_in_circle/n)
+    return pi
+print(f"The estimated value of pi is {monte_carlo(n)} ") 
